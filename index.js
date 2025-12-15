@@ -3,27 +3,39 @@ import { select } from "@inquirer/prompts";
 
 const questions = [
   {
-    question: "What does HTML stand for?",
+    question: "1. What does HTML stand for?",
     options: ["A.Hyper Text Markup Language", "B.High Text Machine Language", "C.Hyperlink Tool Markup"],
     answer: "A.Hyper Text Markup Language"
   },
   {
-    question: "Which language runs in the browser?",
+    question: "2. Which language runs in the browser?",
     options: ["A.Java", "B.C", "C.JavaScript"],
     answer: "C.JavaScript"
   },
   {
-    question: "Which keyword declares a constant in JavaScript?",
+    question: "3. Which keyword declares a constant in JavaScript?",
     options: ["A.var", "B.let", "C.const"],
     answer: "C.const"
   },
-  {question: "Who was the first emperor of Rome?",
+  {question: "4. Who was the first emperor of Rome?",
     options:["A.Agustus Caeser", "B.Julius Caeser", "C.Mark Anthony"],
     answer: "A.Agustus Caeser"
   },
-   {question: "Who was the father of Cleopatra VII?",
+   {question: "5. Who was the father of Cleopatra VII?",
     options:["A. Agustus Caeser", "B.King Ptolemy", "c.Mark Anthony"],
     answer: "B.King Ptolemy"
+  },
+    {question: "6. Is aging a disease or a condition?",
+    options:["A. A disease", "B. A condition", "C. I dont know"],
+    answer: "C. I dont know"
+  },
+    {question: "7. What is the most populated city in Europe?",
+    options:["A. Paris", "B. Warsaw", "C. Moscow"],
+    answer: "C. Moscow"
+  },
+    {question: "8. True or False, Is Elon Musk getting to Mars?",
+    options:["A. True and False", "B. True", "C. False"],
+    answer: "A. True and False"
   }
 ];
 const gameState = {
@@ -37,7 +49,7 @@ const gameState = {
 
 async function startGame() {
   console.clear();
-  console.log(chalk.blue.bold("Welcome to the Trivia Game!\n"));
+  console.log(chalk.blue.bold("Welcome to the Trivia Game!\nAMON\nALVIN\nALLAN\n"));
   startTimer();
   await askQuestion();
 }
@@ -61,7 +73,7 @@ async function askQuestion() {
 }
 function checkAnswer(userAnswer, correctAnswer) {
   if (userAnswer === correctAnswer) {
-    console.log(chalk.green("✔ Correct!\n"));
+    console.log(chalk.green(" Correct!\n"));
     gameState.score.correct++;
   } else {
     console.log(chalk.red(`✖ Wrong! Correct answer: ${correctAnswer}\n`));
@@ -75,12 +87,12 @@ function startTimer() {
   gameState.timer = setTimeout(() => {
     console.log(chalk.red.bold("\n⏰ Time's up!"));
     endGame();
-  }, 20000); 
+  }, 30000); 
 }
 function endGame() {
   clearTimeout(gameState.timer);
 
-  console.log(chalk.blue.bold("\n📊 Game Over!"));
+  console.log(chalk.blue.bold("\n Game Over!"));
   console.log(chalk.green(`Correct Answers: ${gameState.score.correct}`));
   console.log(chalk.red(`Incorrect Answers: ${gameState.score.incorrect}`));
 
