@@ -1,2 +1,4 @@
-# trivia-quizz
-jj
+Amon ogino
+erik wambua
+Alvin
+
